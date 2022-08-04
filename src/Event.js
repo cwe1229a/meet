@@ -20,6 +20,12 @@ class Event extends Component {
       <div className="event">
         <h1 className="event-title">{event.summary}</h1>
         <div className="event-info"></div>
+        <button
+          className="event-details-btn"
+          onClick={this.toggleDetails}
+        ></button>
+        <div className="event-location">{event.location}</div>
+        <div className="event-dateTime">{event.start.dateTime}</div>
       </div>
     );
   }

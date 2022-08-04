@@ -17,4 +17,16 @@ describe("<Event /> component", () => {
   test("render information in the event item", () => {
     expect(EventWrapper.find(".event-info")).toHaveLength(1);
   });
+
+  test("render location in the event item", () => {
+    expect(EventWrapper.find(".event-location")).toHaveLength(1);
+  });
+
+  test("render details of event with button", () => {
+    expect(EventWrapper.find(".event-details-btn")).toHaveLength(1);
+  });
+
+  test("render date in the event item", () => {
+    expect(EventWrapper.find(".event-dateTime")).toHaveLength(1);
+  });
 });
