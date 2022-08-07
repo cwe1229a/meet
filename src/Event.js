@@ -4,7 +4,8 @@ class Event extends Component {
   constructor() {
     super();
     this.state = {
-      show: false
+      show: false,
+      buttonText: "Look at details"
     };
   }
 
@@ -15,17 +16,18 @@ class Event extends Component {
 
   render() {
     const { event } = this.props;
+    const { show, buttonText } = this.state;
 
     return (
       <div className="event">
         <h1 className="event-title">{event.summary}</h1>
         <div className="event-info"></div>
-        <button
-          className="event-details-btn"
-          onClick={this.toggleDetails}
-        ></button>
+        <button className="event-details-btn" onClick={this.toggleDetails}>
+          {buttonText}
+        </button>
         <div className="event-location">{event.location}</div>
         <div className="event-dateTime">{event.start.dateTime}</div>
+        {show && <div className="events-details">{event.description}</div>}
       </div>
     );
   }

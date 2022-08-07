@@ -2,6 +2,7 @@
 .App {
   text-align: center;
   padding: 2% 5%;
+  background-color: #c25d32;
 }
 
 .App * {
@@ -73,16 +74,17 @@ input[type="number"] {
 }
 
 .suggestions > li:hover {
-  background-color: #bcdcdb;
+  background-color: #d8a47f;
 }
 
 .event {
   padding: 10px 10px 35px;
   margin-bottom: 10px;
   text-align: left;
-  border: 1px solid #ccc;
+  border: 5px solid #0f7173;
   border-radius: 4px;
   position: relative;
+  background-color: #d8a47f;
 }
 
 .event-details-btn {
@@ -93,6 +95,7 @@ input[type="number"] {
   border-radius: 4px;
   outline: none;
   cursor: pointer;
+  background-color: #6aa9a4;
 }
 
 .name {
@@ -147,12 +150,12 @@ input[type="number"] {
 }
 
 .login-button {
-  color: #494949;
+  color: #6aa9a4;
   text-transform: uppercase;
   text-decoration: none;
   background: #ffffff;
   padding: 20px;
-  border: 4px solid #494949;
+  border: 4px solid #0f7173;
   display: inline-block;
   transition: all 0.4s ease 0s;
   min-width: 10rem;
