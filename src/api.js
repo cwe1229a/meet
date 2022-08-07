@@ -2,6 +2,12 @@ import { mockData } from "./mock-data";
 import axios from "axios";
 import NProgress from "nprogress";
 
+export const extractLocations = (events) => {
+  var extractLocations = events.map((event) => event.location);
+  var locations = [...new Set(extractLocations)];
+  return locations;
+};
+
 export const getAccessToken = async () => {
   const accessToken = localStorage.getItem("access_token");
   const tokenCheck = accessToken && (await checkToken(accessToken));
@@ -27,7 +33,7 @@ const getToken = async (code) => {
     const encodeCode = encodeURIComponent(code);
 
     const response = await fetch(
-      "https://qwbtarzae1.execute-api.us-east-1.amazonaws.com/dev/api/get-auth-url" +
+      "https://qwbtarzae1.execute-api.us-east-1.amazonaws.com/dev/api/token" +
         "/" +
         encodeCode
     );
@@ -65,7 +71,7 @@ export const getEvents = async () => {
   if (token) {
     removeQuery();
     const url =
-      "https://qwbtarzae1.execute-api.us-east-1.amazonaws.com/dev/api/get-auth-url" +
+      "https://qwbtarzae1.execute-api.us-east-1.amazonaws.com/dev/api/get-events" +
       "/" +
       token;
     const result = await axios.get(url);
@@ -91,10 +97,4 @@ const removeQuery = () => {
     newurl = window.location.protocol + "//" + window.location.host;
     window.history.pushState("", "", newurl);
   }
-};
-
-export const extractLocations = (events) => {
-  var extractLocations = events.map((event) => event.location);
-  var locations = [...new Set(extractLocations)];
-  return locations;
 };
