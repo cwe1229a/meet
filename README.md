@@ -4,8 +4,10 @@
 
 This app is meant to display events based on the user's entry of location and time. It is a foray into learning TDD
 
-## Languaged and Technologies used
+## Languages and Technologies used
 * React
+* Jest
+* Cucumber
 
 ## Writing Test Scenarios
 
