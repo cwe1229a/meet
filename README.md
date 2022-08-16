@@ -8,6 +8,7 @@ This app is meant to display events based on the user's entry of location and ti
 * React
 * Jest
 * Cucumber
+* Puppeteer
 
 ## Writing Test Scenarios
 
