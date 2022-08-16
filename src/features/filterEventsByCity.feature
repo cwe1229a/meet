@@ -1,4 +1,4 @@
-Feature: Filter events by city
+Feature: FILTER EVENTS BY CITY
 
 Scenario: When user hasn’t searched for a city, show upcoming events from all cities.
 Given user hasn’t searched for any city
