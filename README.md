@@ -8,7 +8,7 @@ This app was made to display events based on the user's entry of location and ti
 * Javascript
 * Css
 * HTML
-*Gherkin
+* Gherkin
 * React
 * Jest
 * Cucumber
