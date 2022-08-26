@@ -6,6 +6,7 @@ import NumberOfEvents from "./NumberOfEvents";
 import "./nprogress.css";
 import WelcomeScreen from "./WelcomeScreen";
 import { getEvents, extractLocations, checkToken, getAccessToken } from "./api";
+import { OfflineAlert } from "./Alert";
 
 class App extends Component {
   state = {
@@ -27,6 +28,15 @@ class App extends Component {
         if (this.mounted) {
           this.setState({ events, locations: extractLocations(events) });
         }
+      });
+    }
+    if (navigator.onLine) {
+      this.setState({
+        offlineText: ""
+      });
+    } else {
+      this.setState({
+        offlineText: "You are offline! Loading from your last visit."
       });
     }
   }
@@ -57,6 +67,8 @@ class App extends Component {
 
     return (
       <div className="App">
+        <h1>Welcome to the Meet App</h1>
+        <OfflineAlert text={this.state.offlineText} />
         <CitySearch
           locations={this.state.locations}
           updateEvents={this.updateEvents}
