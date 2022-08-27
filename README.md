@@ -5,6 +5,10 @@
 This app was made to display events based on the user's entry of location and time using Google Calendar events provided by CF. It is a project meant to help learn testing using TDD(Testing Driven Development) and BDD(Behavior Driven Development)
 
 ## Languages and Technologies used
+* Javascript
+* Css
+* HTML
+* Gherkin
 * React
 * Jest
 * Cucumber
