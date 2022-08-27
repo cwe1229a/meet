@@ -4,6 +4,11 @@ import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
 const EventGenre = ({ events }) => {
+  useEffect(() => {
+    setData(() => getData());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [events]);
+
   const [data, setData] = useState([]);
 
   const getData = () => {
@@ -17,20 +22,15 @@ const EventGenre = ({ events }) => {
     return data;
   };
 
-  useEffect(() => {
-    setData(() => getData());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [events]);
-
   return (
-    <ResponsiveContainer height={400}>
-      <PieChart width={400} height={400}>
+    <ResponsiveContainer height={200}>
+      <PieChart width={200} height={200}>
         <Pie
           data={data}
-          cx={200}
-          cy={200}
+          cx={"50%"}
+          cy={"50%"}
           labelLine={false}
-          outerRadius={80}
+          outerRadius={"60%"}
           fill="#8884d8"
           dataKey="value"
           nameKey={"genre"}
@@ -39,7 +39,11 @@ const EventGenre = ({ events }) => {
           }
         >
           {data.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+            <Cell
+              key={`cell-${index}`}
+              fill={COLORS[index % COLORS.length]}
+              name={entry.name}
+            />
           ))}
         </Pie>
       </PieChart>
